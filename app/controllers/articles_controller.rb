@@ -8,4 +8,12 @@ class ArticlesController < ApplicationController
         @articles = Article.all
     end
 
+    def new
+    end
+
+    def create
+        @article = Article.new(params.require(:article).permit(:title, :description))
+        render text: @article.inspect
+    end
+
 end

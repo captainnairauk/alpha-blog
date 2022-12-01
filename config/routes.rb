@@ -2,5 +2,5 @@ AlphaBlog::Application.routes.draw do
   
   get "pages/home"
   get "pages/about"
-  resources :articles, only: [:show, :index]
+  resources :articles, only: [:show, :index, :new, :create]
 end
