@@ -41,7 +41,7 @@ body {
 
 #page-content {
   flex: 1 0 auto;
-  background-color: lightgray;
+  background-color: white
 }
 
 #sticky-footer{
@@ -50,5 +50,11 @@ body {
     height: 74px;
     padding: 30px;
     color: #fff;
+    font-weight:600;
 }
+
+.text-danger{
+    color: white
+}
+
 
