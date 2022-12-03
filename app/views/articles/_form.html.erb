@@ -1,16 +1,9 @@
 <div class="container">
-    <% if @article.errors.any? %>
-        <h2> The following errors prevented the article from being saved</h2>
-        <ul>
-            <% @article.errors.full_messages.each do |msg|%>
-                <li><%= msg %></li>
-            <% end %>
-        </ul>
-    <% end %>
+    
 
     <div class="row col-md-offset-1">
         <div class = "col-md-9 ">
-
+            <%= render 'shared/errors'%>
             <%= form_for @article do|f|%>
                 <div class = "form-group">
                     <%= f.label :title, class: "control-label col-sm-2" %>
