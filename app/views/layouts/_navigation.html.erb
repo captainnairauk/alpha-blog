@@ -21,15 +21,12 @@
           <a class = "nav-link" href="#">Link</a>
         </li>
         <li class="dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <%= link_to "Create new article", new_article_path, class: "dropdown-item"%>
+            <%= link_to "View articles", articles_path, class: "dropdown-item"%>
+            <div role="separator" class="divider"></div>
+            <a class = "dropdown-item" href="#">Something else</a>
           </ul>
         </li>
       </ul>
