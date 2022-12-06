@@ -34,7 +34,7 @@
                 </div>
 
                 <div class = "form-group">
-                    <%= f.submit "Sign up", class: "btn btn-lg"%>
+                    <%= f.submit(@user.new_record? ? "Sign up" : "Update account", class: "btn btn-lg")%>
                 </div>
             <% end %>
 
