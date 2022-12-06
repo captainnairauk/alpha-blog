@@ -2,7 +2,7 @@
     
     <div class="row col-md-offset-1">
         <div class = "col-md-9 ">
-            <%= render 'shared/errors'%>
+            <%= render 'shared/errors', obj: @article%>
             <%= form_for @article do|f|%>
                 <div class = "form-group">
                     <%= f.label :title, class: "control-label col-sm-2" %>

@@ -2,5 +2,7 @@ AlphaBlog::Application.routes.draw do
   
   root "pages#home"
   get "pages/about"
-  resources :articles, only: [:show, :index, :new, :create, :edit, :update, :destroy]
+  resources :articles
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
 end
