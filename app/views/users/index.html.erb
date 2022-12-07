@@ -1,0 +1,26 @@
+<h1 class = "text-center">Alpha Bloggers</h1>
+
+<div class = "container">
+    <% @users.each do |user|%>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center ">
+                    <h3 class="panel-title"><%= link_to user.username, user_path(user), class: "text-success" %></h3>
+                </div>
+                <div class="panel-body text-center">
+                <h3 class="panel-title"><%= link_to gravatar_for(user, size: 150), user %></h3>
+                    <p class= "panel-body" ><%= pluralize(user.articles.count, "article")%></p>
+                    <div class = "btn-toolbar.btn-group-justified">
+                        <a href = "#"><button type="button" class="btn btn-xs btn-success"><%= link_to "View profile", user_path(user), class: "btn-xs btn-success" %></button></a>
+                        <a href = "#"><button type="button" class="btn btn-xs btn-info "><%= link_to "Edit profile", edit_user_path(user),class: "btn-xs btn-info" %></button></a>
+                    </div>
+                </div>
+                <div class="panel-footer text-center">
+                    <small>Joined <%= time_ago_in_words(user.created_at)%> ago</small>
+                </div>
+            </div> 
+        </div> 
+    </div>
+    <% end %>
+</div>

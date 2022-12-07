@@ -1,0 +1,24 @@
+<div class = "container">
+    <% @articles.each do |article|%>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center ">
+                    <h3 class="panel-title"><%= link_to article.title, article_path(article), class: "text-success" %></h3>
+                </div>
+                <div class="panel-body text-center">
+                    <%= truncate(article.description, length:100)%>
+                    <div class = "btn-toolbar.btn-group-justified">
+                        <a href = "#"><button type="button" class="btn btn-xs btn-success"><%= link_to "View", article_path(article), class: "btn-xs btn-success" %></button></a>
+                        <a href = "#"><button type="button" class="btn btn-xs btn-info "><%= link_to "Edit", edit_article_path(article),class: "btn-xs btn-info" %></button></a>
+                        <a href = "#"><button type="button" class="btn btn-xs btn-danger "><%= link_to "Delete", article_path(article),method: :delete, data: {confirm: "Are you sure?"}, class: "btn-xs btn-danger" %></button></a>
+                    </div>
+                </div>
+                <div class="panel-footer text-center">
+                    <small>Created <%= time_ago_in_words(article.created_at)%> ago, edited <%= time_ago_in_words(article.updated_at)%> ago</small>
+                </div>
+            </div> 
+        </div> 
+    </div>
+    <% end %>
+</div>
