@@ -4,9 +4,21 @@
         <div class="col-sm-8 col-sm-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading text-center ">
-                    <h3 class="panel-title"><%= link_to article.title, article_path(article), class: "text-success" %></h3>
+                    <h3 class="panel-title">
+                        <%= link_to article.title, article_path(article), class: "text-success" %>
+                    </h3>
                 </div>
+
+                <div class="panel-heading text-center ">
+                    <h5 class="panel-title">
+                        <% if article.user %>
+                         by- <%= link_to article.user.username, user_path(article.user),  class: "text-success" %>
+                        <% end %>
+                    </h5>
+                </div>
+                
                 <div class="panel-body text-center">
+                    
                     <%= truncate(article.description, length:100)%>
                     <div class = "btn-toolbar.btn-group-justified">
                         <a href = "#"><button type="button" class="btn btn-xs btn-success"><%= link_to "View", article_path(article), class: "btn-xs btn-success" %></button></a>
