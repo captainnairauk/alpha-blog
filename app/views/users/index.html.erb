@@ -17,7 +17,10 @@
                     <p class= "panel-body" ><%= pluralize(user.articles.count, "article")%></p>
                     <div class = "btn-toolbar.btn-group-justified">
                         <a href = "#"><button type="button" class="btn btn-xs btn-success"><%= link_to "View profile", user_path(user), class: "btn-xs btn-success" %></button></a>
-                        <a href = "#"><button type="button" class="btn btn-xs btn-info "><%= link_to "Edit profile", edit_user_path(user),class: "btn-xs btn-info" %></button></a>
+
+                        <% if logged_in? and user == current_user%>
+                            <a href = "#"><button type="button" class="btn btn-xs btn-info "><%= link_to "Edit profile", edit_user_path(user),class: "btn-xs btn-info" %></button></a>
+                        <% end %>
                     </div>
                 </div>
                 <div class="panel-footer text-center">
