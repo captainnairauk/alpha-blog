@@ -18,8 +18,14 @@
                     <div class = "btn-toolbar.btn-group-justified">
                         <a href = "#"><button type="button" class="btn btn-xs btn-success"><%= link_to "View profile", user_path(user), class: "btn-xs btn-success" %></button></a>
 
-                        <% if logged_in? and user == current_user%>
-                            <a href = "#"><button type="button" class="btn btn-xs btn-info "><%= link_to "Edit profile", edit_user_path(user),class: "btn-xs btn-info" %></button></a>
+                        <% if logged_in? %>
+                            <% if  user == current_user%>
+                                <a href = "#"><button type="button" class="btn btn-xs btn-info ">
+                                <%= link_to "Edit profile", edit_user_path(user),class: "btn-xs btn-info" %></button></a>
+                            <% end %>
+                            <% if current_user.admin?%>
+                                <%= link_to "Delete user", user_path(user), class: "btn btn-xs btn-danger", method: :delete, data: {confirm: "Are you sure you want to delete the user account and all associated articles?"} %>
+                            <% end %>
                         <% end %>
                     </div>
                 </div>

@@ -22,7 +22,7 @@
                     <%= truncate(article.description, length:100)%>
                     <div class = "btn-toolbar.btn-group-justified">
                         <a href = "#"><button type="button" class="btn btn-xs btn-success"><%= link_to "View", article_path(article), class: "btn-xs btn-success" %></button></a>
-                        <% if logged_in? && article.user == current_user%>
+                        <% if logged_in? && (article.user == current_user || current_user.admin?) %>
                             <a href = "#"><button type="button" class="btn btn-xs btn-info "><%= link_to "Edit", edit_article_path(article),class: "btn-xs btn-info" %></button></a>
                             <a href = "#"><button type="button" class="btn btn-xs btn-danger "><%= link_to "Delete", article_path(article),method: :delete, data: {confirm: "Are you sure?"}, class: "btn-xs btn-danger" %></button></a>
                         <% end %>
