@@ -43,6 +43,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'will_paginate', '~> 3.3', '>= 3.3.1' 
 
+group :test do
+  gem 'turn'
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
