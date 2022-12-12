@@ -28,6 +28,16 @@
             <li><a class = "dropdown-item" href="#">Something else</a></li>
           </ul>
         </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          <% if logged_in? && current_user.admin?%>
+            <li><%= link_to "Create new category", new_category_path, class: "dropdown-item"%></li>
+          <% end %>
+            <li><%= link_to "View categories", categories_path, class: "dropdown-item"%></li>
+          </ul>
+        </li>
         <% if logged_in?%>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%="(Admin)" if current_user.admin? %> Profile [<%= current_user.username%>] <span class="caret"></span></a>
