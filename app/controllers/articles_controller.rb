@@ -21,6 +21,7 @@ class ArticlesController < ApplicationController
     end
 
     def create
+
         @article = Article.new(article_params)
         @article.user = current_user
         # render text: @article.inspect
